@@ -1,32 +1,40 @@
 # 1. 目次
-<a id="markdown-目次" name="目次"></a>
+<a id="markdown-%E7%9B%AE%E6%AC%A1" name="%E7%9B%AE%E6%AC%A1"></a>
 <!-- TOC -->
 
-- [1. 目次](#1-目次)
-- [2. Dockerについて](#2-dockerについて)
-- [3. Dockerのインストール](#3-dockerのインストール)
-    - [3.1. DockerのEditionとバージョン](#31-dockerのeditionとバージョン)
-    - [3.2. インストール方法](#32-インストール方法)
+- [1. 目次](#1-%E7%9B%AE%E6%AC%A1)
+- [2. Dockerについて](#2-docker%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- [3. Dockerのインストール](#3-docker%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB)
+    - [3.1. DockerのEditionとバージョン](#31-docker%E3%81%AEedition%E3%81%A8%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3)
+    - [3.2. インストール方法](#32-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95)
         - [3.2.1. Windows](#321-windows)
         - [3.2.2. Mac](#322-mac)
         - [3.2.3. Linux](#323-linux)
-- [4. Dockerコンテナの実行](#4-dockerコンテナの実行)
-    - [4.1. hello-worldコマンドの実行](#41-hello-worldコマンドの実行)
-        - [4.1.1. docker runコマンドの分割](#411-docker-runコマンドの分割)
-    - [4.2. Docker Hubとは](#42-docker-hubとは)
+- [4. Dockerコンテナの実行](#4-docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%AE%9F%E8%A1%8C)
+    - [4.1. hello-worldコマンドの実行](#41-hello-world%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E5%AE%9F%E8%A1%8C)
+        - [4.1.1. docker runコマンドの分割](#411-docker-run%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E5%88%86%E5%89%B2)
+    - [4.2. Docker Hubとは](#42-docker-hub%E3%81%A8%E3%81%AF)
     - [4.3. Tag](#43-tag)
-    - [4.4. Dockerイメージとは](#44-dockerイメージとは)
-    - [4.5. Dockerイメージ継承](#45-dockerイメージ継承)
-    - [4.6. whalesayコンテナの実行とDockerイメージダウンロードの動作](#46-whalesayコンテナの実行とdockerイメージダウンロードの動作)
-- [5. ローカル上のDockerイメージの管理](#5-ローカル上のdockerイメージの管理)
-- [6. Dockerfileを使用したイメージビルド方法](#6-dockerfileを使用したイメージビルド方法)
-- [7. リポジトリにイメージをpushする方法](#7-リポジトリにイメージをpushする方法)
-    - [7.1. Docker Hubへpushする方法](#71-docker-hubへpushする方法)
+    - [4.4. Dockerイメージとは](#44-docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%81%A8%E3%81%AF)
+    - [4.5. Dockerイメージ継承](#45-docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E7%B6%99%E6%89%BF)
+    - [4.6. whalesayコンテナの実行とDockerイメージダウンロードの動作](#46-whalesay%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%81%A8docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AE%E5%8B%95%E4%BD%9C)
+- [5. ローカル上のDockerイメージの管理](#5-%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E4%B8%8A%E3%81%AEdocker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%81%AE%E7%AE%A1%E7%90%86)
+- [6. Dockerfileを使用したイメージビルド方法](#6-dockerfile%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%93%E3%83%AB%E3%83%89%E6%96%B9%E6%B3%95)
+- [7. リポジトリにイメージをpushする方法](#7-%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%AB%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%82%92push%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95)
+    - [7.1. Docker Hubへpushする方法](#71-docker-hub%E3%81%B8push%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95)
+- [8. nginxコンテナの実行とでタッチモードの解説](#8-nginx%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%81%A8%E3%81%A7%E3%82%BF%E3%83%83%E3%83%81%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AE%E8%A7%A3%E8%AA%AC)
+    - [8.1. nginxのコンテナを立ち上げるコマンド](#81-nginx%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%82%92%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89)
+- [9. バインドマウントについて](#9-%E3%83%90%E3%82%A4%E3%83%B3%E3%83%89%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- [10. DockerfileのCOPY命令、ADD命令](#10-dockerfile%E3%81%AEcopy%E5%91%BD%E4%BB%A4add%E5%91%BD%E4%BB%A4)
+    - [10.1. docker cpコマンド](#101-docker-cp%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89)
+- [11. コンテナのライフサイクル](#11-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB)
+- [12. コンテナのシェルへの接続](#12-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E3%82%B7%E3%82%A7%E3%83%AB%E3%81%B8%E3%81%AE%E6%8E%A5%E7%B6%9A)
+- [13. docker commit](#13-docker-commit)
 
 <!-- /TOC -->
 
 # 2. Dockerについて
-<a id="markdown-dockerについて" name="dockerについて"></a>
+<a id="markdown-Docker%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" name="Docker%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"></a>
 従来のホスト型仮想化とコンテナ型仮想化の違い
 1. 仮想化のオーバーヘッド   
 - 従来の仮想化
@@ -54,10 +62,10 @@
     ※高いセキュリティレベルが求められるシステムにはネックになる。
 
 # 3. Dockerのインストール
-<a id="markdown-dockerのインストール" name="dockerのインストール"></a>
+<a id="markdown-Docker%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" name="Docker%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"></a>
 
 ## 3.1. DockerのEditionとバージョン
-<a id="markdown-dockerのeditionとバージョン" name="dockerのeditionとバージョン"></a>
+<a id="markdown-Docker%E3%81%AEEdition%E3%81%A8%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3" name="Docker%E3%81%AEEdition%E3%81%A8%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3"></a>
 - Docker Community Edition(Docker CE)   
     - 無償版
     - 基本的な機能は使える
@@ -68,31 +76,31 @@
     - イメージのセキュリティスキャンが行われる。
 
 ## 3.2. インストール方法
-<a id="markdown-インストール方法" name="インストール方法"></a>
+<a id="markdown-%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95" name="%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95"></a>
 Docker アカウントの作成が必要
 
 ### 3.2.1. Windows
-<a id="markdown-windows" name="windows"></a>
+<a id="markdown-Windows" name="Windows"></a>
 - Docker for Windows
 検索すればわかる。
 - Docker Toolbox
 GitHubでインストールする。
 
 ### 3.2.2. Mac
-<a id="markdown-mac" name="mac"></a>
+<a id="markdown-Mac" name="Mac"></a>
 - Docker for Mac
 検索すればわかる。
 - Docker Toolbox
 GitHubでインストールする。
 
 ### 3.2.3. Linux
-<a id="markdown-linux" name="linux"></a>
+<a id="markdown-Linux" name="Linux"></a>
 
 # 4. Dockerコンテナの実行
-<a id="markdown-dockerコンテナの実行" name="dockerコンテナの実行"></a>
+<a id="markdown-Docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%AE%9F%E8%A1%8C" name="Docker%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%AE%9F%E8%A1%8C"></a>
 
 ## 4.1. hello-worldコマンドの実行
-<a id="markdown-hello-worldコマンドの実行" name="hello-worldコマンドの実行"></a>
+<a id="markdown-hello-world%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E5%AE%9F%E8%A1%8C" name="hello-world%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E5%AE%9F%E8%A1%8C"></a>
 実行コマンド
 > docker run hello-world   
 
@@ -134,28 +142,28 @@ docker runコマンドの実行時の動作
 5. ダウンロードしたイメージを実行する。
 
 ### 4.1.1. docker runコマンドの分割
-<a id="markdown-docker-runコマンドの分割" name="docker-runコマンドの分割"></a>
+<a id="markdown-docker%20run%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E5%88%86%E5%89%B2" name="docker%20run%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AE%E5%88%86%E5%89%B2"></a>
 `docker run`コマンドは以下3つのコマンドを実行したのと同じ意味になる。
 - `docker pull`：イメージの取得
 - `docker create`：コンテナの作成
 - `docker start`：コンテナの起動
 
 ## 4.2. Docker Hubとは
-<a id="markdown-docker-hubとは" name="docker-hubとは"></a>
+<a id="markdown-Docker%20Hub%E3%81%A8%E3%81%AF" name="Docker%20Hub%E3%81%A8%E3%81%AF"></a>
 - Dockerイメージのレジストリサービス
 - Dockerイメージの公開、検索、ダウンロードを行うことができる。   
 
 ※officialなリポジトリを選ぶのが安全
 
 ## 4.3. Tag
-<a id="markdown-tag" name="tag"></a>
+<a id="markdown-Tag" name="Tag"></a>
 Tagでイメージを分けることができる。
 > docker run hello-world`:latest`
 
 `:xxx`　xxxがTag名
 
 ## 4.4. Dockerイメージとは
-<a id="markdown-dockerイメージとは" name="dockerイメージとは"></a>
+<a id="markdown-Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%81%A8%E3%81%AF" name="Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%81%A8%E3%81%AF"></a>
 - コンテナ実行に必要なファイルをまとめたファイルシステム
 - AUFSなどの特殊なファイルシステムが使用されている。
 - イメージ中のデータはレイヤで構成されており、読み取り専用
@@ -167,14 +175,14 @@ Dockerイメージのファイルシステム
 dockerのメリットは軽量で短時間で起動できること！！
 
 ## 4.5. Dockerイメージ継承
-<a id="markdown-dockerイメージ継承" name="dockerイメージ継承"></a>
+<a id="markdown-Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E7%B6%99%E6%89%BF" name="Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E7%B6%99%E6%89%BF"></a>
 
 ベースイメージから継承できる。   
 **メリット**   
 イメージ管理・通信量の節約ができる？
 
 ## 4.6. whalesayコンテナの実行とDockerイメージダウンロードの動作
-<a id="markdown-whalesayコンテナの実行とdockerイメージダウンロードの動作" name="whalesayコンテナの実行とdockerイメージダウンロードの動作"></a>
+<a id="markdown-whalesay%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%81%A8Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AE%E5%8B%95%E4%BD%9C" name="whalesay%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%81%A8Docker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%AE%E5%8B%95%E4%BD%9C"></a>
 > docker run docker/whalesay `cowsay Hello World!`   
 
 cowsay Hello World! はコンテナ内で呼び出すコマンド
@@ -199,7 +207,7 @@ $ docker run docker/whalesay cowsay Hello World!
 ~~~
 
 # 5. ローカル上のDockerイメージの管理
-<a id="markdown-ローカル上のdockerイメージの管理" name="ローカル上のdockerイメージの管理"></a>
+<a id="markdown-%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E4%B8%8A%E3%81%AEDocker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%81%AE%E7%AE%A1%E7%90%86" name="%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E4%B8%8A%E3%81%AEDocker%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%81%AE%E7%AE%A1%E7%90%86"></a>
 ローカル上にダウンロードズミのイメージ一覧を表示するコマンド
 > docker images
 
@@ -336,7 +344,7 @@ hello_world             latest              fce289e99eb9        13 months ago   
 ※タグ名を指定しないとlatestタグが指定されるが、**latest=最新ではない**。明示的にタグ名をつけて管理するべき。
 
 # 6. Dockerfileを使用したイメージビルド方法
-<a id="markdown-dockerfileを使用したイメージビルド方法" name="dockerfileを使用したイメージビルド方法"></a>
+<a id="markdown-Dockerfile%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%93%E3%83%AB%E3%83%89%E6%96%B9%E6%B3%95" name="Dockerfile%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%9F%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%93%E3%83%AB%E3%83%89%E6%96%B9%E6%B3%95"></a>
 
 1. 作業用のディレクトリを作成する。
 2. Dockerfileを作成する。
@@ -355,10 +363,10 @@ Dockerfileからイメージをビルドするコマンド
 > docker build --no-cache -t タグ名 ビルドコンテキスト
 
 # 7. リポジトリにイメージをpushする方法
-<a id="markdown-リポジトリにイメージをpushする方法" name="リポジトリにイメージをpushする方法"></a>
+<a id="markdown-%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%AB%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%82%92push%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95" name="%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%AB%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%82%92push%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95"></a>
 
 ## 7.1. Docker Hubへpushする方法
-<a id="markdown-docker-hubへpushする方法" name="docker-hubへpushする方法"></a>
+<a id="markdown-Docker%20Hub%E3%81%B8push%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95" name="Docker%20Hub%E3%81%B8push%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95"></a>
 Docker Hubにログインする場合
 > $docker login
 
@@ -374,3 +382,66 @@ Quay.ioにログインする場合
 Pushコマンド
 > docker push ＜DockerID＞/＜イメージ名＞:＜タグ名＞
 
+# 8. nginxコンテナの実行とでタッチモードの解説
+<a id="markdown-nginx%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%81%A8%E3%81%A7%E3%82%BF%E3%83%83%E3%83%81%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AE%E8%A7%A3%E8%AA%AC" name="nginx%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%81%A8%E3%81%A7%E3%82%BF%E3%83%83%E3%83%81%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AE%E8%A7%A3%E8%AA%AC"></a>
+
+## 8.1. nginxのコンテナを立ち上げるコマンド
+<a id="markdown-nginx%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%82%92%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89" name="nginx%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%82%92%E7%AB%8B%E3%81%A1%E4%B8%8A%E3%81%92%E3%82%8B%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89"></a>
+
+> $ docker run --name <コンテナ名> -d -p <ホストのポート番号>:<コンテナ側のポート番号> <イメージ名>  
+※　--name : コンテナに名前をつける  
+　 -d：デタッチモード（バックグランド実行）  
+
+# 9. バインドマウントについて
+<a id="markdown-%E3%83%90%E3%82%A4%E3%83%B3%E3%83%89%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" name="%E3%83%90%E3%82%A4%E3%83%B3%E3%83%89%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"></a>
+
+~~~
+$docker run --name <コンテナ名> -d -v <ホスト側のディレクトリ >:<コンテナ側のマウントポイント>:<オプション> -p <ホスト側のポート番号>:<コンテナ側のポート番号> <イメージ名>
+~~~
+
+> -v で指定するパスは絶対パス
+
+# 10. DockerfileのCOPY命令、ADD命令
+<a id="markdown-Dockerfile%E3%81%AECOPY%E5%91%BD%E4%BB%A4%E3%80%81ADD%E5%91%BD%E4%BB%A4" name="Dockerfile%E3%81%AECOPY%E5%91%BD%E4%BB%A4%E3%80%81ADD%E5%91%BD%E4%BB%A4"></a>
+
+## 10.1. docker cpコマンド
+<a id="markdown-docker%20cp%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89" name="docker%20cp%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89"></a>
+
+~~~
+ホストマシンのファイルをコンテナ内にコピーする場合
+$docker cp <ホスト上のコピーしたいファイルのパス> <コンテナ名or ID>:<コピー先のパス>
+
+コンテナ内のファイルをホストマシンにコピーする場合
+$docker cp <コンテナ名 or ID>:<コンテナ情のコピーしたいファイルのパス> <コピー先のパス>
+~~~
+
+# 11. コンテナのライフサイクル
+<a id="markdown-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB" name="%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB"></a>
+
+docker inspect 
+
+docker pause
+
+docker unpause
+
+# 12. コンテナのシェルへの接続
+<a id="markdown-%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E3%82%B7%E3%82%A7%E3%83%AB%E3%81%B8%E3%81%AE%E6%8E%A5%E7%B6%9A" name="%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E3%81%AE%E3%82%B7%E3%82%A7%E3%83%AB%E3%81%B8%E3%81%AE%E6%8E%A5%E7%B6%9A"></a>
+ 
+~~~bash
+$ docker attach <コンテナ名 or コンテナID>
+※ただし、シェルに接続できるのは、コンテナでシェルを実行している場合のみ
+Ctrl+p,Ctrl+qでコンテナから抜ける。exitで抜けるとコンテナ停止する。
+
+＜推奨＞
+$ docker exec -it <コンテナ名 or コンテナID> /bin/bash
+※bashがなければ、別のシェルを選択する
+~~~
+
+# 13. docker commit
+<a id="markdown-docker%20commit" name="docker%20commit"></a>
+
+~~~bash
+$ docker commit <コンテナ名 or コンテナID> <イメージ名>:<タグ名>
+~~~
+
+どのような操作で作成されたかわからなくなるので、通常はDockerFILEで変更する。
